@@ -55,7 +55,7 @@ class _CheckBillState extends State<CheckBill> {
 
                   return Card(
                       child: Container(
-                    height: 80.0,
+                    height: 100.0,
                     width: 40.0,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,7 +87,17 @@ class _CheckBillState extends State<CheckBill> {
                                   ),
                                 ),
                               ]),
-
+                          Padding(
+                            padding: EdgeInsets.only(left: 25.0),
+                            child: Text(
+                              "note: ${hD[index]["note"]}",
+                              style: TextStyle(
+                                  color: Color(0xff623B28),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16.0),
+                              textAlign: TextAlign.right,
+                            ),
+                          ),
                           /*Padding(
                                 padding: EdgeInsets.only(left: 20.0),
                                 child: Container(
@@ -127,6 +137,10 @@ class _CheckBillState extends State<CheckBill> {
                 ),
                 onPressed: () async {
                   final user = _auth.currentUser;
+                  // final list = FirebaseFirestore.instance
+                  //     .collection('getOrder')
+                  //     .snapshots();
+                  // FirebaseFirestore.instance.collection("getOrder").docs(snapshots.)
 
                   Navigator.of(context)
                       .pushReplacement(MaterialPageRoute(builder: (_) {
